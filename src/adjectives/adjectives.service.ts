@@ -18,7 +18,12 @@ export class AdjectivesService {
       result[amount] = Adjectives[x in taken ? taken[x] : x];
       taken[x] = --length in taken ? taken[ length ] : length;
     }
-    return result;
+
+    return result.sort((a, b) => {
+      if (a > b) { return 1; }
+      else if (a < b) { return -1; }
+      return 0;
+    });
   }
 
 }

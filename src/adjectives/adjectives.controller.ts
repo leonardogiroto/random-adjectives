@@ -1,4 +1,4 @@
-import { Controller, Get, Param, ParseIntPipe } from '@nestjs/common';
+import { Controller, Get, Query } from '@nestjs/common';
 import { AdjectivesService } from './adjectives.service';
 
 @Controller('adjectives')
@@ -9,8 +9,10 @@ export class AdjectivesController {
   ) { }
 
   @Get()
-  getRandomAdjectives(): Array<string> {
-    return this._adjectivesService.getAdjectives();
+  getRandomAdjectives(
+    @Query('amount') amount: number
+  ): Array<string> {
+    return this._adjectivesService.getAdjectives(amount);
   }
 
 }
