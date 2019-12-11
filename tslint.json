@@ -16,7 +16,8 @@
     "array-type": false,
     "variable-name": false,
     "trailing-comma": false,
-    "object-literal-key-quotes": false
+    "object-literal-key-quotes": false,
+    "one-line": false
   },
   "rulesDirectory": []
 }
